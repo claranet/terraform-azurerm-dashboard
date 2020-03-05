@@ -24,6 +24,28 @@ module "azure-region" {
   azure_region = var.azure_region
 }
 
+module "rg" {
+  source  = "claranet/rg/azurerm"
+  version = "2.x.x"
+
+  location    = module.azure-region.location
+  client_name = var.client_name
+  environment = var.environment
+  stack       = var.stack
+}
+
+module "dashboard" {
+  source  = "claranet/dashboard/azurerm"
+  version = "2.x.x"
+
+  location            = module.azure-region.location
+  resource_group_name = module.rg.resource_group_name
+  dashboard_name      = "VM Dashboard"
+  dashboard_json_file = myjsonfile.json
+  dashboard_title     = "My VM Dashboard"
+}
+
+
 ```
 
 ## Inputs
