@@ -8,9 +8,16 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "dashboard_name" {
+variable "custom_dashboard_name" {
   description = "Dashboard Name"
   type        = string
+  default     = ""
+}
+
+variable "custom_dashboard_title" {
+  description = "Dashboard display title"
+  type        = string
+  default     = ""
 }
 
 variable "dashboard_json_path" {
@@ -18,7 +25,8 @@ variable "dashboard_json_path" {
   type        = string
 }
 
-variable "dashboard_title" {
-  description = "Dashboard display title"
-  type        = string
+variable "extra_tags" {
+  description = "Extra tags to add"
+  type        = map(string)
+  default     = {}
 }
