@@ -38,11 +38,12 @@ module "dashboard" {
   source  = "claranet/dashboard/azurerm"
   version = "2.x.x"
 
-  location            = module.azure-region.location
-  resource_group_name = module.rg.resource_group_name
-  dashboard_name      = "VM Dashboard"
-  dashboard_json_file = myjsonfile.json
-  dashboard_title     = "My VM Dashboard"
+  dashboard_json_path    = "./files/mydash.json"
+  location               = module.azure-region.location
+  resource_group_name    = module.rg.resource_group_name
+  client_name            = var.client_name
+  stack                  = var.stack
+  environment            = var.environment
 }
 
 
@@ -52,11 +53,15 @@ module "dashboard" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| client\_name | Client name/account used in naming | `string` | n/a | yes |
+| custom\_dashboard\_name | Dashboard Name | `string` | `""` | no |
+| custom\_dashboard\_title | Dashboard display title | `string` | `""` | no |
 | dashboard\_json\_path | Dashboard definition JSON file path | `string` | n/a | yes |
-| dashboard\_name | Dashboard Name | `string` | n/a | yes |
-| dashboard\_title | Dashboard display title | `string` | n/a | yes |
+| environment | Project environment | `string` | n/a | yes |
+| extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | location | Azure location. | `string` | n/a | yes |
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
+| stack | Project stack name | `string` | n/a | yes |
 
 ## Outputs
 
