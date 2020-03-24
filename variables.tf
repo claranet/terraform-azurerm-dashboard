@@ -30,7 +30,7 @@ variable "custom_dashboard_name" {
 }
 
 variable "custom_dashboard_title" {
-  description = "Dashboard display title"
+  description = "Dashboard custom display title"
   type        = string
   default     = ""
 }
