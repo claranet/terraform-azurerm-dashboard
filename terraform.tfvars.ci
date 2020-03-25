@@ -1,0 +1,11 @@
+location="fr-central"
+location_short="frc"
+client_name="test"
+environment="test"
+stack="ci"
+
+resource_group_name="rg-test"
+
+dashboard_name="test-dashboard"
+dashboard_json_path = ""
+dashboard_title = "test title"
