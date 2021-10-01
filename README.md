@@ -3,7 +3,8 @@
 
 This module creates a shared dashboard based on a JSON file
 
-## Version compatibility
+<!-- BEGIN_TF_DOCS -->
+## Global versioning rule for Claranet Azure modules
 
 | Module version | Terraform version | AzureRM version |
 | -------------- | ----------------- | --------------- |
@@ -15,21 +16,23 @@ This module creates a shared dashboard based on a JSON file
 
 ## Usage
 
-Terraform module declaration example for your dashboard stack with all required modules:
+This module is optimized to work with the [Claranet terraform-wrapper](https://github.com/claranet/terraform-wrapper) tool
+which set some terraform variables in the environment needed by this module.
+More details about variables set by the `terraform-wrapper` available in the [documentation](https://github.com/claranet/terraform-wrapper#environment).
 
 ```hcl
-module "azure-region" {
+module "azure_region" {
   source  = "claranet/regions/azurerm"
-  version = "2.x.x"
+  version = "x.x.x"
 
   azure_region = var.azure_region
 }
 
 module "rg" {
   source  = "claranet/rg/azurerm"
-  version = "2.x.x"
+  version = "x.x.x"
 
-  location    = module.azure-region.location
+  location    = module.azure_region.location
   client_name = var.client_name
   environment = var.environment
   stack       = var.stack
@@ -37,19 +40,18 @@ module "rg" {
 
 module "dashboard" {
   source  = "claranet/dashboard/azurerm"
-  version = "2.x.x"
+  version = "x.x.x"
 
-  dashboard_json_path    = "./files/mydash.json"
-  location               = module.azure-region.location
-  resource_group_name    = module.rg.resource_group_name
-  client_name            = var.client_name
-  stack                  = var.stack
-  environment            = var.environment
+  dashboard_json_path = var.dashboard_json_file_path
+  location            = module.azure_region.location
+  resource_group_name = module.rg.resource_group_name
+  client_name         = var.client_name
+  stack               = var.stack
+  environment         = var.environment
 }
 
 ```
 
-<!-- BEGIN_TF_DOCS -->
 ## Providers
 
 | Name | Version |
