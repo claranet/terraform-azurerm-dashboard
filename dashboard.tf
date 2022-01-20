@@ -5,7 +5,8 @@ resource "azurerm_dashboard" "dashboard" {
   dashboard_properties = templatefile(var.dashboard_json_path,
     {
       title_content = local.dashboard_title
-  })
+    }
+  )
 
   tags = merge(local.default_tags, var.extra_tags)
 }

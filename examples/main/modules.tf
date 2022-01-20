@@ -19,10 +19,13 @@ module "dashboard" {
   source  = "claranet/dashboard/azurerm"
   version = "x.x.x"
 
-  dashboard_json_path = var.dashboard_json_file_path
-  location            = module.azure_region.location
+  client_name    = var.client_name
+  stack          = var.stack
+  environment    = var.environment
+  location       = module.azure_region.location
+  location_short = module.azure_region.location_short
+
   resource_group_name = module.rg.resource_group_name
-  client_name         = var.client_name
-  stack               = var.stack
-  environment         = var.environment
+
+  dashboard_json_path = var.dashboard_json_file_path
 }
