@@ -42,12 +42,15 @@ module "dashboard" {
   source  = "claranet/dashboard/azurerm"
   version = "x.x.x"
 
-  dashboard_json_path = var.dashboard_json_file_path
-  location            = module.azure_region.location
+  client_name    = var.client_name
+  stack          = var.stack
+  environment    = var.environment
+  location       = module.azure_region.location
+  location_short = module.azure_region.location_short
+
   resource_group_name = module.rg.resource_group_name
-  client_name         = var.client_name
-  stack               = var.stack
-  environment         = var.environment
+
+  dashboard_json_path = var.dashboard_json_file_path
 }
 
 ```
@@ -56,6 +59,7 @@ module "dashboard" {
 
 | Name | Version |
 |------|---------|
+| azurecaf | ~> 1.1 |
 | azurerm | >= 1.32 |
 
 ## Modules
@@ -66,6 +70,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azurecaf_name.dashboard](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/resources/name) | resource |
 | [azurerm_dashboard.dashboard](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dashboard) | resource |
 
 ## Inputs
@@ -79,8 +84,12 @@ No modules.
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | location | Azure location. | `string` | n/a | yes |
+| location\_short | Short string for Azure location. | `string` | n/a | yes |
+| name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
+| name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
 | stack | Project stack name | `string` | n/a | yes |
+| use\_caf\_naming | Use the Azure CAF naming provider to generate default resource name. `custom_dashboard_name` override this if set. Legacy default name is used if this is set to `false`. | `bool` | `true` | no |
 
 ## Outputs
 
