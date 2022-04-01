@@ -81,6 +81,7 @@ No modules.
 | custom\_dashboard\_name | Dashboard Name | `string` | `""` | no |
 | custom\_dashboard\_title | Dashboard custom display title | `string` | `""` | no |
 | dashboard\_json\_path | Dashboard definition JSON file path | `string` | n/a | yes |
+| default\_tags\_enabled | Option to enable or disable default tags | `bool` | `true` | no |
 | environment | Project environment | `string` | n/a | yes |
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | location | Azure location. | `string` | n/a | yes |

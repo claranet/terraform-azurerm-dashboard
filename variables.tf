@@ -32,9 +32,3 @@ variable "dashboard_json_path" {
   description = "Dashboard definition JSON file path"
   type        = string
 }
-
-variable "extra_tags" {
-  description = "Extra tags to add"
-  type        = map(string)
-  default     = {}
-}
