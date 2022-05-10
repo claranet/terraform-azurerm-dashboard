@@ -8,8 +8,9 @@ This module creates a shared dashboard based on a JSON file
 
 | Module version | Terraform version | AzureRM version |
 | -------------- | ----------------- | --------------- |
-| >= 5.x.x       | 0.15.x & 1.0.x    | >= 2.0          |
-| >= 4.x.x       | 0.13.x            | >= 2.0          |
+| >= 6.x.x       | 1.x               | >= 3.0          |
+| >= 5.x.x       | 0.15.x            | >= 2.0          |
+| >= 4.x.x       | 0.13.x / 0.14.x   | >= 2.0          |
 | >= 3.x.x       | 0.12.x            | >= 2.0          |
 | >= 2.x.x       | 0.12.x            | < 2.0           |
 | <  2.x.x       | 0.11.x            | < 2.0           |
@@ -52,7 +53,6 @@ module "dashboard" {
 
   dashboard_json_path = var.dashboard_json_file_path
 }
-
 ```
 
 ## Providers
