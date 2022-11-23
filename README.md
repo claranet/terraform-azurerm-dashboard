@@ -60,7 +60,7 @@ module "dashboard" {
 
 | Name | Version |
 |------|---------|
-| azurecaf | ~> 1.1 |
+| azurecaf | ~> 1.2, >= 1.2.22 |
 | azurerm | >= 1.32 |
 
 ## Modules
@@ -71,8 +71,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurecaf_name.dashboard](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/resources/name) | resource |
 | [azurerm_dashboard.dashboard](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dashboard) | resource |
+| [azurecaf_name.dashboard](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/data-sources/name) | data source |
 
 ## Inputs
 
