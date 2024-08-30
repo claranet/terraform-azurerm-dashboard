@@ -67,8 +67,8 @@ module "dashboard" {
 
 | Name | Version |
 |------|---------|
-| azurecaf | ~> 1.2, >= 1.2.22 |
-| azurerm | >= 1.32 |
+| azurecaf | ~> 1.2.28 |
+| azurerm | ~> 3.0 |
 
 ## Modules
 
