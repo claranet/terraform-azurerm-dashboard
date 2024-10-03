@@ -1,3 +1,25 @@
+## 7.0.1 (2024-10-03)
+
+### Documentation
+
+* update README badge to use OpenTofu registry 6b913bc
+
+### Miscellaneous Chores
+
+* **deps:** update dependency opentofu to v1.8.2 4db6162
+* **deps:** update dependency terraform-docs to v0.19.0 0bcc303
+* **deps:** update dependency trivy to v0.55.0 032254b
+* **deps:** update dependency trivy to v0.55.1 a1a71f6
+* **deps:** update dependency trivy to v0.55.2 f1e7559
+* **deps:** update dependency trivy to v0.56.0 df297ab
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.18.0 057ee4c
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.94.1 8859485
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.94.2 78779d7
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.94.3 a43c98b
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.95.0 1cab822
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.96.0 1ce5735
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.96.1 84e825d
+
 ## 7.0.0 (2024-08-30)
 
 ### ⚠ BREAKING CHANGES
