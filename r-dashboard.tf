@@ -11,8 +11,3 @@ resource "azurerm_portal_dashboard" "main" {
 
   tags = merge(local.default_tags, var.extra_tags)
 }
-
-moved {
-  from = azurerm_dashboard.dashboard
-  to   = azurerm_portal_dashboard.main
-}
