@@ -1,3 +1,32 @@
+## 8.0.0 (2024-10-25)
+
+### ⚠ BREAKING CHANGES
+
+* **AZ-1088:** the resource `azurerm_dashboard` has been replaced by
+`azurerm_portal_dashboard`; it will need to be imported when upgrading
+this module from v7
+* **AZ-1088:** AzureRM Provider v4+ and OpenTofu 1.8+
+
+### Features
+
+* **AZ-1088:** module v8 structure and updates 8a68acb
+
+### Bug Fixes
+
+* **AZ-1088:** remove `moved{}` block cee1c01
+
+### Miscellaneous Chores
+
+* **deps:** update dependency opentofu to v1.8.3 781ecd4
+* **deps:** update dependency opentofu to v1.8.4 a75f7e2
+* **deps:** update dependency pre-commit to v4 36d5ab5
+* **deps:** update dependency pre-commit to v4.0.1 344372b
+* **deps:** update dependency trivy to v0.56.2 97d870f
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v5 88db30d
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.1.0 1150a2d
+* prepare for new examples structure 1bcc9e7
+* update examples structure 1e32374
+
 ## 7.1.0 (2024-10-03)
 
 ### Features
