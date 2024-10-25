@@ -34,36 +34,18 @@ More details about variables set by the `terraform-wrapper` available in the [do
 [Hashicorp Terraform](https://github.com/hashicorp/terraform/). Instead, we recommend to use [OpenTofu](https://github.com/opentofu/opentofu/).
 
 ```hcl
-module "azure_region" {
-  source  = "claranet/regions/azurerm"
-  version = "x.x.x"
-
-  azure_region = var.azure_region
-}
-
-module "rg" {
-  source  = "claranet/rg/azurerm"
-  version = "x.x.x"
-
-  location    = module.azure_region.location
-  client_name = var.client_name
-  environment = var.environment
-  stack       = var.stack
-}
-
 module "dashboard" {
   source  = "claranet/dashboard/azurerm"
   version = "x.x.x"
 
-  client_name    = var.client_name
-  stack          = var.stack
-  environment    = var.environment
-  location       = module.azure_region.location
-  location_short = module.azure_region.location_short
+  client_name         = var.client_name
+  stack               = var.stack
+  environment         = var.environment
+  location            = module.azure_region.location
+  location_short      = module.azure_region.location_short
+  resource_group_name = module.rg.name
 
-  resource_group_name = module.rg.resource_group_name
-
-  dashboard_json_path = var.dashboard_json_file_path
+  json_path = var.json_file_path
 }
 ```
 
@@ -72,7 +54,7 @@ module "dashboard" {
 | Name | Version |
 |------|---------|
 | azurecaf | ~> 1.2.28 |
-| azurerm | ~> 3.0 |
+| azurerm | ~> 4.0 |
 
 ## Modules
 
@@ -82,29 +64,31 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_dashboard.dashboard](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dashboard) | resource |
+| [azurerm_portal_dashboard.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/portal_dashboard) | resource |
 | [azurecaf_name.dashboard](https://registry.terraform.io/providers/claranet/azurecaf/latest/docs/data-sources/name) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| client\_name | Client name/account used in naming | `string` | n/a | yes |
-| custom\_dashboard\_name | Dashboard Name | `string` | `""` | no |
-| custom\_dashboard\_title | Dashboard custom display title | `string` | `""` | no |
-| dashboard\_json\_path | Dashboard definition JSON file path | `string` | n/a | yes |
-| default\_tags\_enabled | Option to enable or disable default tags | `bool` | `true` | no |
-| environment | Project environment | `string` | n/a | yes |
-| extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
-| location | Azure location. | `string` | n/a | yes |
+| client\_name | Client name/account used in naming. | `string` | n/a | yes |
+| custom\_name | Custom name for dashboard, generated if not set. | `string` | `""` | no |
+| dashboard\_custom\_title | Custom display title for dashboard. | `string` | `""` | no |
+| default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
+| environment | Project environment. | `string` | n/a | yes |
+| extra\_tags | Additional tags to add on resources. | `map(string)` | `{}` | no |
+| json\_path | Dashboard definition JSON file path. | `string` | n/a | yes |
+| location | Azure region to use. | `string` | n/a | yes |
 | location\_short | Short string for Azure location. | `string` | n/a | yes |
-| name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
-| name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
-| resource\_group\_name | Resource group name | `string` | n/a | yes |
-| stack | Project stack name | `string` | n/a | yes |
-| use\_caf\_naming | Use the Azure CAF naming provider to generate default resource name. `custom_dashboard_name` override this if set. Legacy default name is used if this is set to `false`. | `bool` | `true` | no |
+| name\_prefix | Optional prefix for the generated name. | `string` | `""` | no |
+| name\_suffix | Optional suffix for the generated name. | `string` | `""` | no |
+| resource\_group\_name | Resource group name. | `string` | n/a | yes |
+| stack | Project stack name. | `string` | n/a | yes |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| id | Dashboard ID. |
+| resource | Dashboard resource object. |
 <!-- END_TF_DOCS -->
