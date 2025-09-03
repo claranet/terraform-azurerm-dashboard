@@ -17,8 +17,3 @@ variable "stack" {
   description = "Project stack name."
   type        = string
 }
-
-variable "json_file_path" {
-  description = "Dashboard JSON file path."
-  type        = string
-}

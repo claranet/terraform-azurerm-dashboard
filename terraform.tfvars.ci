@@ -6,6 +6,5 @@ stack="ci"
 
 resource_group_name="rg-test"
 
-dashboard_name="test-dashboard"
-dashboard_json_path = ""
-dashboard_title = "test title"
+content = "{}"
+display_title = "test title"

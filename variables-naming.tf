@@ -17,9 +17,3 @@ variable "custom_name" {
   type        = string
   default     = ""
 }
-
-variable "dashboard_custom_title" {
-  description = "Custom display title for dashboard."
-  type        = string
-  default     = ""
-}
