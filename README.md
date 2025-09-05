@@ -45,7 +45,8 @@ module "dashboard" {
   location_short      = module.azure_region.location_short
   resource_group_name = module.rg.name
 
-  json_path = var.json_file_path
+  display_title = "My dashboard"
+  content       = file("${path.module}/empty_dashboard.json")
 }
 ```
 
@@ -72,12 +73,12 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | client\_name | Client name/account used in naming. | `string` | n/a | yes |
+| content | Dashboard JSON content. | `string` | n/a | yes |
 | custom\_name | Custom name for dashboard, generated if not set. | `string` | `""` | no |
-| dashboard\_custom\_title | Custom display title for dashboard. | `string` | `""` | no |
 | default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
+| display\_title | Display title for dashboard, defaults to name. | `string` | `""` | no |
 | environment | Project environment. | `string` | n/a | yes |
 | extra\_tags | Additional tags to add on resources. | `map(string)` | `{}` | no |
-| json\_path | Dashboard definition JSON file path. | `string` | n/a | yes |
 | location | Azure region to use. | `string` | n/a | yes |
 | location\_short | Short string for Azure location. | `string` | n/a | yes |
 | name\_prefix | Optional prefix for the generated name. | `string` | `""` | no |

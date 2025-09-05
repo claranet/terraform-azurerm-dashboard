@@ -28,7 +28,14 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "json_path" {
-  description = "Dashboard definition JSON file path."
+variable "content" {
+  description = "Dashboard JSON content."
   type        = string
+  nullable    = false
+}
+
+variable "display_title" {
+  description = "Display title for dashboard, defaults to name."
+  type        = string
+  default     = ""
 }

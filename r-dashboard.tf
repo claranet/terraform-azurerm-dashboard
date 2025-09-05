@@ -3,11 +3,7 @@ resource "azurerm_portal_dashboard" "main" {
   resource_group_name = var.resource_group_name
   location            = var.location
 
-  dashboard_properties = templatefile(var.json_path,
-    {
-      title_content = local.title
-    }
-  )
+  dashboard_properties = var.content
 
-  tags = merge(local.default_tags, var.extra_tags)
+  tags = merge(local.default_tags, { "hidden-title" = local.title }, var.extra_tags)
 }

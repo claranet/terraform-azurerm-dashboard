@@ -9,5 +9,6 @@ module "dashboard" {
   location_short      = module.azure_region.location_short
   resource_group_name = module.rg.name
 
-  json_path = var.json_file_path
+  display_title = "My dashboard"
+  content       = file("${path.module}/empty_dashboard.json")
 }
