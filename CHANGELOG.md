@@ -1,3 +1,59 @@
+## 8.1.0 (2025-09-05)
+
+### Features
+
+* rework module 4de3fb6
+
+### Miscellaneous Chores
+
+* **⚙️:** ✏️ update template identifier for MR review e011d6f
+* 🗑️ remove old commitlint configuration files 0846654
+* **deps:** 🔗 bump AzureRM provider version to v4.31+ c7c1e9d
+* **deps:** update dependency opentofu to v1.10.0 cbe0d56
+* **deps:** update dependency opentofu to v1.10.1 e451ba5
+* **deps:** update dependency opentofu to v1.10.3 909679a
+* **deps:** update dependency opentofu to v1.8.6 7cee897
+* **deps:** update dependency opentofu to v1.8.7 939bb7b
+* **deps:** update dependency opentofu to v1.8.8 7bcc0d3
+* **deps:** update dependency opentofu to v1.9.0 372370a
+* **deps:** update dependency opentofu to v1.9.1 9011b07
+* **deps:** update dependency pre-commit to v4.1.0 ff5aedd
+* **deps:** update dependency pre-commit to v4.2.0 5ef701b
+* **deps:** update dependency terraform-docs to v0.20.0 96dc828
+* **deps:** update dependency tflint to v0.54.0 b259f36
+* **deps:** update dependency tflint to v0.55.0 e486256
+* **deps:** update dependency tflint to v0.56.0 d9579cb
+* **deps:** update dependency tflint to v0.57.0 3d796b8
+* **deps:** update dependency tflint to v0.58.0 fcd5cff
+* **deps:** update dependency tflint to v0.58.1 e1921ef
+* **deps:** update dependency tflint to v0.59.1 6eba503
+* **deps:** update dependency trivy to v0.57.1 c64b2a8
+* **deps:** update dependency trivy to v0.58.0 7086939
+* **deps:** update dependency trivy to v0.58.1 00ce7c5
+* **deps:** update dependency trivy to v0.58.2 499ba08
+* **deps:** update dependency trivy to v0.59.1 9d6381c
+* **deps:** update dependency trivy to v0.60.0 6885511
+* **deps:** update dependency trivy to v0.61.0 d2da1a3
+* **deps:** update dependency trivy to v0.61.1 2c5e664
+* **deps:** update dependency trivy to v0.62.0 8a93ace
+* **deps:** update dependency trivy to v0.62.1 6815b27
+* **deps:** update dependency trivy to v0.63.0 bc63458
+* **deps:** update dependency trivy to v0.66.0 15dc680
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.19.0 1e729d4
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.20.0 71104eb
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.21.0 cb03326
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.22.0 233d568
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v6 b250108
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.0 c883a43
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.1 3409d7c
+* **deps:** update tools dd4e13f
+* **deps:** update tools 055d3b0
+* **deps:** update tools 8ffb833
+* **deps:** update tools e1d120a
+* **deps:** update tools cbddbaf
+* update Github templates ddf27f1
+* update tflint config for v0.55.0 6e9f942
+
 ## 8.0.0 (2024-10-25)
 
 ### ⚠ BREAKING CHANGES
