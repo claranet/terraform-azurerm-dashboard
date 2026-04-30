@@ -53,7 +53,7 @@ module "dashboard" {
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | azurecaf | >= 1.2.28 |
 | azurerm | ~> 4.31 |
 
@@ -64,14 +64,14 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [azurerm_portal_dashboard.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/portal_dashboard) | resource |
 | [azurecaf_name.dashboard](https://registry.terraform.io/providers/claranet/azurecaf/latest/docs/data-sources/name) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | client\_name | Client name/account used in naming. | `string` | n/a | yes |
 | content | Dashboard JSON content. | `string` | n/a | yes |
 | custom\_name | Custom name for dashboard, generated if not set. | `string` | `""` | no |
@@ -89,7 +89,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | id | Dashboard ID. |
 | resource | Dashboard resource object. |
 <!-- END_TF_DOCS -->
